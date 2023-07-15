@@ -492,7 +492,7 @@ void makeGetRequestSSL(String host, String request) {
   clientSSL.print(host);
   clientSSL.print("Connection: Upgrade, HTTP2-Settings\n
 Upgrade: h2c\n
-HTTP2-Settings: <base64url encoding of HTTP/2 SETTINGS payload>");
+HTTP2-Settings: token68");
   clientSSL.print("\n");
   clientSSL.println("Connection: close");
   clientSSL.println();
