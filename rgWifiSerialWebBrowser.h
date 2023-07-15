@@ -485,7 +485,9 @@ void makeGetRequestSSL(String host, String request) {
   // Make a HTTP request:
   clientSSL.print("GET ");
   clientSSL.print(request) ;
-  clientSSL.print(" HTTP/1.1 \n");
+  // old http1 code
+  //clientSSL.print(" HTTP/1.1 \n");
+  clientSSL.print(" HTTP/2.0 \n");
   clientSSL.print("Host: ");
   clientSSL.print(host);
   clientSSL.print("\n");
