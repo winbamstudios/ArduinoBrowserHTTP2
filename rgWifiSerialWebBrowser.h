@@ -487,12 +487,11 @@ void makeGetRequestSSL(String host, String request) {
   clientSSL.print(request) ;
   // old http1 code
   //clientSSL.print(" HTTP/1.1 \n");
-  clientSSL.print(" HTTP/2.0 \n");
+  clientSSL.print("PRI *m HTTP/2.0\r\n\r\nSM\r\n\r\n"); 
+  clientSSL.print("HTTP/2.0 \n");
   clientSSL.print("Host: ");
   clientSSL.print(host);
-  clientSSL.print("Connection: Upgrade, HTTP2-Settings\n
-Upgrade: h2c\n
-HTTP2-Settings: token68");
+  clientSSL.print("Connection: Upgrade, HTTP2-Settings\nUpgrade: h2c\nHTTP2-Settings: token68");
   clientSSL.print("\n");
   clientSSL.println("Connection: close");
   clientSSL.println();
